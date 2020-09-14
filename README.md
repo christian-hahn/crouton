@@ -2,7 +2,7 @@
 
 ## Transparent Remote Objects
 
-crouton is a pure Python library to facilitate the remote instantiation, manipulation and transparent use of one Python interpreter's Objects from another interpreter.  It implements a server-client model, where the Server can register Types and Instances to be accessible from a remote Client. The transport layer is implemented in TCP sockets.
+crouton is a pure Python library to facilitate the remote instantiation, manipulation and transparent use of one Python interpreter's Objects from another interpreter.  It implements a server-client model, where the Server can register Types and Instances to be accessible from a remote Client. The transport layer is implemented via TCP sockets.
 
 crouton does not require any changes to be made to the Objects or Types being exposed.  To demonstrate this, below are examples that expose Python built-in types.
 
@@ -24,7 +24,7 @@ sudo python setup.py install
 ```python
 from crouton import Server
 
-# Create server, defaults to 'localhost', 5000
+# Create server, defaults to '0.0.0.0', 5000
 server = Server()
 
 # Register some types: clients can instantiate objects of

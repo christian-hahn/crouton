@@ -2,7 +2,7 @@
 
 from crouton import Server
 
-# Create server, defaults to 'localhost', 5000
+# Create server, defaults to '0.0.0.0', 5000
 server = Server()
 
 # Register some types
