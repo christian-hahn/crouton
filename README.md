@@ -24,19 +24,25 @@ sudo python setup.py install
 ```python
 from crouton import Server
 
+# Example user object
+class MyObject:
+
+    def a_method(self, an_arg):
+        return an_arg + ' world'
+
 # Create server, defaults to '0.0.0.0', 5000
 server = Server()
 
-# Register some types: clients can instantiate objects of
-# these register types
-server.register(int)
-server.register(float)
-server.register(dict)
-server.register(list)
-server.register(your_own_type_here)
+# Register some types
+server.register_type(MyObject)
+server.register_type(int)
+server.register_type(float)
+server.register_type(dict)
+server.register_type(list)
 
 # Start the server request-loop
 server.run()
+
 ```
 
 ### Client
@@ -47,14 +53,18 @@ from crouton import Client
 # Create client, defaults to 'localhost', 5000
 client = Client()
 
+# Create an instance of MyObject on the remote server
+obj = client.factory('MyObject')
+ret = obj.a_method('hello')
+print(ret) # Prints "hello world"
+
 # Create a list on the remote server
 obj = client.factory(list)
 
-# Perform some operations on the remote list
-# as if it were a local object
+# Perform some operations on the remote object
 for item in (1.1, '1.1', 1, [], {}):
     obj.append(item)
-print(obj)
+print(obj)  # Prints "[1.1, '1.1', 1, [], {}]"
 ```
 
 ## License
