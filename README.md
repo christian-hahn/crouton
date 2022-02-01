@@ -1,12 +1,12 @@
-# crouton [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/christian-hahn/crouton/blob/master/LICENSE)
+[![](docs/banner.jpg)](https://github.com/christian-hahn/crouton)
 
-## Transparent Remote Objects
+## Transparent Remote Objects [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/christian-hahn/crouton/blob/master/LICENSE)
 
-crouton is a pure Python library to facilitate the remote instantiation, manipulation and transparent use of one Python interpreter's Objects from another interpreter.  It implements a server-client model, where the Server can register Types and Instances to be accessible from a remote Client. The transport layer is implemented via TCP sockets.
+**crouton** */ˈkruːtɒn/* is a pure Python library to facilitate the remote instantiation, manipulation and transparent use of one Python interpreter's Objects from another interpreter.  It implements a server-client model, where the Server can register Types and Instances to be accessible from a remote Client. The transport layer is implemented via TCP sockets.
 
-crouton does not require any changes to be made to the Objects or Types being exposed.  To demonstrate this, below are examples that expose Python built-in types.
+**crouton** does not require any changes to be made to the Objects or Types being exposed.  To demonstrate this, below are examples that expose Python built-in types.
 
-crouton is Python 2/3 compatible.
+crouton requires Python 3.
 
 ## Installation
 
